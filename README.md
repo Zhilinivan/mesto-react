@@ -1,6 +1,6 @@
 # Проект Mesto-react
 
-ссылка на проект [Create React App](https://github.com/Zhilinivan/mesto-react.git).
+ссылка на проект [Create React App](https://zhilinivan.github.io/mesto-react/).
 
 ## Использованные технологии
 
