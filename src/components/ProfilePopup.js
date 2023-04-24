@@ -15,6 +15,9 @@ function ProfilePopup({ isOpen, onClose }) {
         className={"popup__input popup__input_name"}
         name={"name"}
         placeholder={"Имя"}
+        minLength={"2"}
+        maxLength={"40"}
+        autoComplete={"off"}
       />
       <p className={"popup__error name-error"}></p>
       <input
@@ -23,6 +26,9 @@ function ProfilePopup({ isOpen, onClose }) {
         className={"popup__input popup__input_about"}
         name={"about"}
         placeholder={"О себе"}
+        minLength={"2"}
+        maxLength={"200"}
+        autoComplete={"off"}
       />
       <p className={"popup__error about-error"}></p>
     </PopupWithForm>

@@ -15,6 +15,9 @@ function ProfileAddCard({ isOpen, onClose }) {
         className={"popup__input popup__input_title"}
         name={"title"}
         placeholder={"Название"}
+        minLength={"2"}
+        maxLength={"30"}
+        autoComplete={"off"}
       />
       <p className={"popup__error title-error"}></p>
       <input
@@ -23,6 +26,7 @@ function ProfileAddCard({ isOpen, onClose }) {
         className={"popup__input popup__input_src"}
         name={"link"}
         placeholder={"Ссылка на картинку"}
+        autoComplete={"off"}
       />
       <p className={"popup__error link-error"}></p>
     </PopupWithForm>
