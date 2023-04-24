@@ -1,4 +1,4 @@
-function PopupFullScreen(props) {
+function ImagePopup(props) {
   return (
     <div
       className={`popup popup_fullscreen" ${props.card ? "popup_opened" : ""}`}
@@ -22,4 +22,4 @@ function PopupFullScreen(props) {
     </div>
   );
 }
-export default PopupFullScreen;
+export default ImagePopup;

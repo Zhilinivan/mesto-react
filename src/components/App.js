@@ -5,7 +5,7 @@ import Footer from "./Footer.js";
 import ProfilePopup from "./ProfilePopup.js";
 import ProfileAddCard from "./ProfileAddCard.js";
 import ProfileAvatar from "./ProfileAvatar.js";
-import PopupFullScreen from "./PopupFullScreen.js";
+import ImagePopup from "./ImagePopup.js";
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] =
@@ -52,7 +52,7 @@ function App() {
       <ProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} />
       <ProfileAddCard isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
       <ProfileAvatar isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />
-      <PopupFullScreen onClose={closeAllPopups} card={selectedCard} />
+      <ImagePopup onClose={closeAllPopups} card={selectedCard} />
     </div>
   );
 }
