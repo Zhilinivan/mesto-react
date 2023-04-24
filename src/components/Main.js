@@ -22,43 +22,43 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
   }, []);
 
   return (
-    <main className={"content"}>
-      <section className={"profile"}>
-        <div className={"profile__avatar"}>
+    <main className="content">
+      <section className="profile">
+        <div className="profile__avatar">
           <img
-            className={"profile__avatar-image"}
+            className="profile__avatar-image"
             src={userAvatar}
             alt={"Аватарка"}
           />
           <button
             type={"button"}
-            className={"profile__avatar-button"}
+            className="profile__avatar-button"
             aria-label={"изменить аватар"}
             onClick={onEditAvatar}
           ></button>
         </div>
-        <div className={"profile__info"}>
-          <div className={"profile__name-group"}>
-            <h1 className={"profile__name"}>{userName}</h1>
+        <div className="profile__info">
+          <div className="profile__name-group">
+            <h1 className="profile__name">{userName}</h1>
             <button
               type={"button"}
-              className={"profile__edit-button"}
+              className="profile__edit-button"
               aria-label={"редактирование профиля"}
               onClick={onEditProfile}
             ></button>
           </div>
-          <p className={"profile__about"}>{userDescription}</p>
+          <p className="profile__about">{userDescription}</p>
         </div>
         <button
           type={"button"}
-          className={"profile__add-button"}
+          className="profile__add-button"
           aria-label={"добавление карточки"}
           onClick={onAddPlace}
         ></button>
       </section>
 
-      <section className={"elements"}>
-        <ul className={"elements__list"}>
+      <section className="elements">
+        <ul className="elements__list">
           {cards.map((card) => (
             <Card
               key={card._id}

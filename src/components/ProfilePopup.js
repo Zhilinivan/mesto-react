@@ -12,25 +12,25 @@ function ProfilePopup({ isOpen, onClose }) {
       <input
         type={"text"}
         required
-        className={"popup__input popup__input_name"}
+        className="popup__input popup__input_name"
         name={"name"}
         placeholder={"Имя"}
         minLength={"2"}
         maxLength={"40"}
         autoComplete={"off"}
       />
-      <p className={"popup__error name-error"}></p>
+      <p className="popup__error name-error"></p>
       <input
         type={"text"}
         required
-        className={"popup__input popup__input_about"}
+        className="popup__input popup__input_about"
         name={"about"}
         placeholder={"О себе"}
         minLength={"2"}
         maxLength={"200"}
         autoComplete={"off"}
       />
-      <p className={"popup__error about-error"}></p>
+      <p className="popup__error about-error"></p>
     </PopupWithForm>
   );
 }
