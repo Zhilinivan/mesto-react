@@ -1,34 +1,30 @@
 import PopupWithForm from "./PopupWithForm.js";
 
-function ProfileAddCard(props) {
+function ProfileAddCard({ isOpen, onClose }) {
   return (
     <PopupWithForm
       name={"addcard"}
       title={"Новое место"}
       submitName={"Создать"}
-      isOpen={props.isOpen}
-      onClose={props.onClose}
+      isOpen={isOpen}
+      onClose={onClose}
     >
       <input
-        type="text"
+        type={"text"}
         required
-        class="popup__input popup__input_title"
-        minlength="2"
-        maxlength="30"
-        name="title"
-        placeholder="Название"
-        autocomplete="off"
+        className={"popup__input popup__input_title"}
+        name={"title"}
+        placeholder={"Название"}
       />
-      <div class="popup__error title-error"></div>
+      <p className={"popup__error title-error"}></p>
       <input
-        type="url"
+        type={"url"}
         required
-        class="popup__input popup__input_src"
-        name="link"
-        placeholder="Ссылка на картинку"
-        autocomplete="off"
+        className={"popup__input popup__input_src"}
+        name={"link"}
+        placeholder={"Ссылка на картинку"}
       />
-      <div class="popup__error link-error"></div>
+      <p className={"popup__error link-error"}></p>
     </PopupWithForm>
   );
 }

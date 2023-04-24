@@ -1,23 +1,22 @@
 import PopupWithForm from "./PopupWithForm.js";
 
-function ProfileAvatar(props) {
+function ProfileAvatar({ isOpen, onClose }) {
   return (
     <PopupWithForm
       name={"avatar"}
       title={"Обновить аватар"}
       submitName={"Сохранить"}
-      isOpen={props.isOpen}
-      onClose={props.onClose}
+      isOpen={isOpen}
+      onClose={onClose}
     >
       <input
-        type="url"
+        type={"url"}
         required
-        class="popup__input popup__input_avatarsrc"
-        name="avatar"
-        placeholder="Ссылка на аватар"
-        autocomplete="off"
+        className={"popup__input popup__input_avatarsrc"}
+        name={"avatar"}
+        placeholder={"Ссылка на аватар"}
       />
-      <div class="popup__error avatar-error"></div>
+      <p className={"popup__error avatar-error"}></p>
     </PopupWithForm>
   );
 }

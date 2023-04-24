@@ -1,32 +1,32 @@
 import React from "react";
 
-function Card(props) {
+function Card({ card, likes, onCardClick }) {
   function handleClick() {
-    props.onCardClick(props.card);
+    onCardClick(card);
   }
 
   return (
-    <li className="card">
+    <li className={"card"}>
       <img
-        className="card__image"
-        src={props.link}
-        alt={props.name}
+        className={"card__image"}
+        src={card.link}
+        alt={card.name}
         onClick={handleClick}
       />
-      <div className="card__bottom">
-        <h2 className="card__title">{props.name}</h2>
-        <div className="card__like-group">
+      <div className={"card__bottom"}>
+        <h2 className={"card__title"}>{card.name}</h2>
+        <div className={"card__like-group"}>
           <button
-            type="button"
-            className="card__like-button"
-            aria-label="поставить лайк"
+            type={"button"}
+            className={"card__like-button"}
+            aria-label={"поставить лайк"}
           ></button>
-          <p class="card__likes">{props.likes}</p>
+          <p className={"card__likes"}>{likes}</p>
         </div>
         <button
-          type="button"
-          className="card__delete-button"
-          aria-label="удалить карточку"
+          type={"button"}
+          className={"card__delete-button"}
+          aria-label={"удалить карточку"}
         ></button>
       </div>
     </li>

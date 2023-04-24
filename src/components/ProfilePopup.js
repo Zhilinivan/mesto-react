@@ -1,36 +1,30 @@
 import PopupWithForm from "./PopupWithForm.js";
 
-function ProfilePopup(props) {
+function ProfilePopup({ isOpen, onClose }) {
   return (
     <PopupWithForm
       name={"profile"}
       title={"Редактировать профиль"}
       submitName={"Сохранить"}
-      isOpen={props.isOpen}
-      onClose={props.onClose}
+      isOpen={isOpen}
+      onClose={onClose}
     >
       <input
-        type="text"
+        type={"text"}
         required
-        className="popup__input popup__input_name"
-        minlength="2"
-        maxlength="40"
-        name="name"
-        placeholder="Имя"
-        autocomplete="off"
+        className={"popup__input popup__input_name"}
+        name={"name"}
+        placeholder={"Имя"}
       />
-      <div class="popup__error name-error"></div>
+      <p className={"popup__error name-error"}></p>
       <input
-        type="text"
+        type={"text"}
         required
-        className="popup__input popup__input_about"
-        minlength="2"
-        maxlength="200"
-        name="about"
-        placeholder="О себе"
-        autocomplete="off"
+        className={"popup__input popup__input_about"}
+        name={"about"}
+        placeholder={"О себе"}
       />
-      <div class="popup__error about-error"></div>
+      <p className={"popup__error about-error"}></p>
     </PopupWithForm>
   );
 }
