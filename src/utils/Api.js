@@ -73,22 +73,14 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
       headers: this._headers,
-    })
-      .then(this._checkResponse)
-      .then((res) => {
-        return res.likes;
-      });
+    }).then(this._checkResponse);
   }
 
   deleteLike(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "DELETE",
       headers: this._headers,
-    })
-      .then(this._checkResponse)
-      .then((res) => {
-        return res.likes;
-      });
+    }).then(this._checkResponse);
   }
 }
 

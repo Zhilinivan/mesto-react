@@ -1,6 +1,24 @@
+import React, { useEffect, useRef } from "react";
 import PopupWithForm from "./PopupWithForm.js";
 
-function ProfileAddCard({ isOpen, onClose }) {
+function ProfileAddCard({ isOpen, onClose, onAddPlace }) {
+  const refTitle = useRef();
+  const refLink = useRef();
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+
+    onAddPlace({
+      title: refTitle.current.value,
+      link: refLink.current.value,
+    });
+  }
+
+  useEffect(() => {
+    refTitle.current.value = "";
+    refLink.current.value = "";
+  }, [isOpen]);
+
   return (
     <PopupWithForm
       name={"addcard"}
@@ -8,8 +26,10 @@ function ProfileAddCard({ isOpen, onClose }) {
       submitName={"Создать"}
       isOpen={isOpen}
       onClose={onClose}
+      onSubmit={handleSubmit}
     >
       <input
+        ref={refTitle}
         type={"text"}
         required
         className="popup__input popup__input_title"
@@ -21,6 +41,7 @@ function ProfileAddCard({ isOpen, onClose }) {
       />
       <p className="popup__error title-error"></p>
       <input
+        ref={refLink}
         type={"url"}
         required
         className="popup__input popup__input_src"

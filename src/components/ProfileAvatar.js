@@ -1,6 +1,21 @@
+import React, { useEffect, useRef } from "react";
 import PopupWithForm from "./PopupWithForm.js";
 
-function ProfileAvatar({ isOpen, onClose }) {
+function ProfileAvatar({ isOpen, onClose, onUpdateAvatar }) {
+  const ref = useRef();
+
+  function handleAvatarSubmit(evt) {
+    evt.preventDefault();
+
+    onUpdateAvatar({
+      avatar: ref.current.value,
+    });
+  }
+
+  useEffect(() => {
+    ref.current.value = "";
+  }, [isOpen]);
+
   return (
     <PopupWithForm
       name={"avatar"}
@@ -8,8 +23,10 @@ function ProfileAvatar({ isOpen, onClose }) {
       submitName={"Сохранить"}
       isOpen={isOpen}
       onClose={onClose}
+      onSubmit={handleAvatarSubmit}
     >
       <input
+        ref={ref}
         type={"url"}
         required
         className="popup__input popup__input_avatarsrc"
